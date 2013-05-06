@@ -4,7 +4,7 @@ import java.util.Iterator;
 /// clustering
 ArrayList<PVector> elementos;
 ArrayList<Cluster> grupos;
-int cantidad = 2000;
+int cantidad = 4000;
 
 void setup() {  
   size(800, 800);
@@ -25,7 +25,7 @@ void draw() {
   background(0);     
   Cluster grupoInicial = new Cluster(elementos.get(0), 0); 
   grupos.add(grupoInicial);  
-  for (int i = 1 ; i < elementos.size() ; i++) {     
+  for (int i = 1 ; i < elementos.size() ; i+=3) {     
     PVector actual = elementos.get(i);    
     boolean presente = false;
     for (int grupo = 0 ; grupo < grupos.size() ; grupo++ ) {

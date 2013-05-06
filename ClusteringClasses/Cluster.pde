@@ -58,15 +58,16 @@ public class Cluster {
   }
 
   public void pintar() {
-    // Iterator iter = puntos.iterator();
-    //    fill(tono);
-    //    while (iter.hasNext ()) {
-    //      PVector t = (PVector)iter.next();      
-    //      ellipse(t.x, t.y, 2, 2);        
-    //    }    
+    /**/
+     Iterator iter = puntos.iterator();
+        fill(tono);
+        while (iter.hasNext ()) {
+          PVector t = (PVector)iter.next();      
+          ellipse(t.x, t.y, 2, 2);        
+        }  
     stroke(tono);
     noFill();
-    ellipse(promedio.x, promedio.y, puntos.size()/2, puntos.size()/2);
+    ellipse(promedio.x, promedio.y, puntos.size(), puntos.size());
     noStroke();
    /* fill(255);
     rect(promedio.x, promedio.y, 10, 10);*/
