@@ -10,7 +10,7 @@ void setup() {
   size(800, 800);
   rectMode(CENTER);
   elementos = new ArrayList<PVector>();  
-  for (int i = 0 ; i < cantidad ; i++) {   
+  for (int i = 0 ; i < 1 ; i++) {   
     elementos.add( new PVector(random(50, width-50), random(50, height-50)) );    
     /*elementos.add( new PVector(random(50,300), random(100, 300)));
      elementos.add( new PVector(random(50,300), random(450, 750))); 
@@ -51,6 +51,11 @@ void draw() {
   fill(255);
   text("FPS: " + (int)frameRate +" | Cantidad de puntos: " + elementos.size(), 10, 25);
  //mousePressed();
+ 
+ if(mouseButton == CENTER){
+    elementos.add( new PVector( mouseX, mouseY ) );
+  }
+  
 }
 
 void mousePressed() {
@@ -61,7 +66,7 @@ void mousePressed() {
       elementos.add( new PVector(random(50, width-50), random(50, height-50)) );
     }
   }
-  else {
+  else if(mouseButton == RIGHT){
     //println("1");
     elementos.clear();
     for (int i = 0 ; i < cantidad/4 ; i++) {   
@@ -70,6 +75,8 @@ void mousePressed() {
       elementos.add( new PVector(random(450, 700), random(100, 300)));
       elementos.add( new PVector(random(450, 700), random(450, 750)));
     }
+  } else if(mouseButton == CENTER){
+    elementos.add( new PVector( mouseX, mouseY ) );
   }
 }
 
