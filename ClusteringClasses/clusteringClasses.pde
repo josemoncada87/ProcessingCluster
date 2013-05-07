@@ -4,7 +4,7 @@ import java.util.Iterator;
 /// clustering
 ArrayList<PVector> elementos;
 ArrayList<Cluster> grupos;
-int cantidad = 4000;
+int cantidad = 48000;
 
 void setup() {  
   size(800, 800);
@@ -25,7 +25,7 @@ void draw() {
   background(0);     
   Cluster grupoInicial = new Cluster(elementos.get(0), 0); 
   grupos.add(grupoInicial);  
-  for (int i = 1 ; i < elementos.size() ; i+=3) {     
+  for (int i = 1 ; i < elementos.size() ; i+=25) {     
     PVector actual = elementos.get(i);    
     boolean presente = false;
     for (int grupo = 0 ; grupo < grupos.size() ; grupo++ ) {
@@ -50,6 +50,7 @@ void draw() {
   grupos.clear();
   fill(255);
   text("FPS: " + (int)frameRate +" | Cantidad de puntos: " + elementos.size(), 10, 25);
+ //mousePressed();
 }
 
 void mousePressed() {
@@ -66,7 +67,7 @@ void mousePressed() {
     for (int i = 0 ; i < cantidad/4 ; i++) {   
       elementos.add( new PVector(random(50, 300), random(100, 300)));
       elementos.add( new PVector(random(50, 300), random(450, 750))); 
-      elementos.add( new PVector(random(450, 700), random(50, 300)));
+      elementos.add( new PVector(random(450, 700), random(100, 300)));
       elementos.add( new PVector(random(450, 700), random(450, 750)));
     }
   }

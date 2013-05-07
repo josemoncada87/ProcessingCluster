@@ -67,7 +67,7 @@ public class Cluster {
         }  
     stroke(tono);
     noFill();
-    ellipse(promedio.x, promedio.y, puntos.size(), puntos.size());
+    ellipse(promedio.x, promedio.y, constrain(puntos.size(),0, width/4) , constrain(puntos.size(),0, width/4));
     noStroke();
    /* fill(255);
     rect(promedio.x, promedio.y, 10, 10);*/
